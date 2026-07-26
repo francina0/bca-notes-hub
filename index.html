@@ -3,104 +3,449 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- GOOGLE SEARCH CONSOLE VERIFICATION -->
     <meta name="google-site-verification" content="herPQ6Zb4bmoX-clQkOxuMcDgpYFlz7jrWELnYVzc-w" />
-    <title>BrightMind Academy | BCA Exam Prep, Coding Tuitions & Projects</title>
+    
+    <title>BrightMind Academy | BCA Exam Prep, School Tuitions & Projects</title>
+    
     <style>
-        body { font-family: Arial, sans-serif; margin: 0; padding: 20px; background-color: #f4f6f9; text-align: center; }
-        header { background: #1a73e8; color: white; padding: 30px; border-radius: 8px; }
-        .card { background: white; padding: 20px; margin: 20px auto; max-width: 450px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); text-align: left; }
-        .card h2 { color: #1a73e8; text-align: center; }
-        .btn { display: block; padding: 12px; color: white; background: #28a745; text-decoration: none; border-radius: 5px; font-weight: bold; text-align: center; margin-top: 10px; }
-        .btn-sample { background: #17a2b8; }
-        .btn-free { background: #ff9800; }
-        .btn-email { background: #ea4335; }
-        .tag { background: #e8f0fe; color: #1a73e8; padding: 3px 8px; border-radius: 4px; font-weight: bold; font-size: 12px; }
+        :root {
+            --primary: #1a73e8;
+            --primary-dark: #1557b0;
+            --secondary: #ff9800;
+            --success: #28a745;
+            --info: #17a2b8;
+            --danger: #ea4335;
+            --bg-light: #f4f6f9;
+            --text-dark: #2c3e50;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-light);
+            color: var(--text-dark);
+            line-height: 1.6;
+            padding-bottom: 60px;
+        }
+
+        /* HEADER */
+        header {
+            background: linear-gradient(135deg, #1a73e8, #0d47a1);
+            color: white;
+            padding: 40px 20px 30px;
+            text-align: center;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+        }
+
+        header h1 {
+            font-size: 2.2rem;
+            margin-bottom: 8px;
+            letter-spacing: 0.5px;
+        }
+
+        header p {
+            font-size: 1.05rem;
+            opacity: 0.9;
+        }
+
+        /* NAVIGATION BAR */
+        nav {
+            background: #ffffff;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            overflow-x: auto;
+            white-space: nowrap;
+            display: flex;
+            justify-content: center;
+            padding: 10px 0;
+        }
+
+        nav a {
+            display: inline-block;
+            color: var(--text-dark);
+            text-decoration: none;
+            padding: 8px 16px;
+            margin: 0 4px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            border-radius: 20px;
+            transition: all 0.3s ease;
+        }
+
+        nav a:hover, nav a.active {
+            background-color: var(--primary);
+            color: white;
+        }
+
+        /* CONTAINER & LAYOUT */
+        .container {
+            max-width: 900px;
+            margin: 30px auto;
+            padding: 0 15px;
+        }
+
+        .section-title {
+            text-align: center;
+            margin: 40px 0 20px;
+            color: var(--primary-dark);
+            font-size: 1.6rem;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 50px;
+            height: 3px;
+            background: var(--secondary);
+            margin: 8px auto 0;
+            border-radius: 2px;
+        }
+
+        /* CARDS */
+        .card {
+            background: white;
+            padding: 25px;
+            margin-bottom: 25px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+            border-top: 4px solid var(--primary);
+            transition: transform 0.2s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-2px);
+        }
+
+        .card.school-card { border-top-color: #9c27b0; }
+        .card.free-card { border-top-color: var(--secondary); }
+        .card.paid-card { border-top-color: var(--success); }
+        .card.project-card { border-top-color: var(--danger); }
+
+        .card h2 {
+            color: var(--text-dark);
+            font-size: 1.35rem;
+            margin-bottom: 12px;
+        }
+
+        .card p {
+            font-size: 0.95rem;
+            color: #555;
+            margin-bottom: 15px;
+        }
+
+        /* TAGS & LISTS */
+        .tag {
+            display: inline-block;
+            background: #e8f0fe;
+            color: var(--primary);
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-weight: 700;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+        }
+
+        .tag.free { background: #fff3e0; color: #e65100; }
+        .tag.paid { background: #e8f5e9; color: #1b5e20; }
+        .tag.school { background: #f3e5f5; color: #7b1fa2; }
+
+        .info-list {
+            list-style: none;
+            padding: 0;
+            margin: 15px 0;
+        }
+
+        .info-list li {
+            font-size: 0.95rem;
+            margin-bottom: 8px;
+            color: #444;
+        }
+
+        /* BUTTONS */
+        .btn-group {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin-top: 15px;
+        }
+
+        .btn {
+            display: block;
+            padding: 12px 18px;
+            color: white;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: bold;
+            font-size: 0.95rem;
+            text-align: center;
+            transition: opacity 0.2s ease;
+        }
+
+        .btn:hover { opacity: 0.9; }
+        .btn-sample { background-color: var(--info); }
+        .btn-free { background-color: var(--secondary); }
+        .btn-email { background-color: var(--danger); }
+        .btn-success { background-color: var(--success); }
+
+        /* FOOTER */
+        footer {
+            text-align: center;
+            margin-top: 50px;
+            color: #777;
+            font-size: 0.85rem;
+        }
     </style>
 </head>
 <body>
 
-    <header>
+    <!-- HEADER -->
+    <header id="home">
         <h1>BrightMind Academy</h1>
-        <p>Exam Notes | Beginner Coding Tuitions | College Project Guidance</p>
+        <p>Class 8th–12th/PUC Science Tuitions | BCA Exam Prep & Coding | Project Guidance</p>
     </header>
-    <!-- SECTION 1: AI NOTES -->
-    <div class="card">
-        <span class="tag">STUDY MATERIAL</span>
-        <h2>Semester 5: Artificial Intelligence Notes</h2>
-        <p>Module 1–5 complete notes, search algorithms, logic & solved exam papers.</p>
-        
-        <a href="https://drive.google.com/file/d/1zsnRcS4XBI6bYhEUJFYFZJI2iWhtYc-r/view?usp=drive_link" class="btn btn-sample" target="_blank">Download Free Sample PDF</a>
-        
-        <a href="mailto:francinafranklin0@gmail.com?subject=Buy%20BCA%20Sem%205%20AI%20Notes&body=Hi,%20I%20want%20to%20buy%20the%20BCA%20Sem%205%20AI%20Notes.%20Please%20send%20payment%20details." 
-           class="btn btn-email">
-           ✉️ Buy Full Notes Bundle (₹99)
-        </a>
-        <a href="https://docs.google.com/forms/d/e/1FAIpQLScPBW5G7W2XMbhC7fb_SrB3eSSGUrnJEsqUxddFKZnpUGAg2w/viewform?usp=publish-editor" class="btn btn-free" target="_blank">
-        📝 Register / Request Material
-        </a>
+
+    <!-- NAVIGATION BAR -->
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#school-puc">Class 8th–PUC</a>
+        <a href="#sem1">Sem 1</a>
+        <a href="#sem2">Sem 2</a>
+        <a href="#sem3">Sem 3</a>
+        <a href="#sem4">Sem 4</a>
+        <a href="#sem5">Sem 5</a>
+        <a href="#sem6">Sem 6</a>
+        <a href="#projects">Projects</a>
+    </nav>
+
+    <div class="container">
+
+        <!-- ==================== HOME / OVERVIEW SECTION ==================== -->
+        <h2 class="section-title">✨ Free Masterclasses & Registration</h2>
+
+        <!-- FREE LIVE CLASSES CARD -->
+        <div class="card free-card">
+            <span class="tag free">100% FREE DEMO SESSION</span>
+            <h2>🎓 Live Programming & Subject Tuitions (Free First Class)</h2>
+            <p>Learn C, C++, Java, Data Structures, Python, AI, ML, or Web Development from scratch on Google Meet. Interactive small batches with personalized 1-on-1 doubt clearing.</p>
+            <p><strong>🔥 Special Offer: Your 1st Live Class is 100% FREE!</strong></p>
+            
+            <div class="btn-group">
+                <a href="mailto:francinafranklin0@gmail.com?subject=Register%20for%20FREE%20Demo%20Class&body=Hi,%20I%20want%20to%20attend%20the%20FREE%20First%20Session%20for%20Live%20Tuitions.%20My%20Subject/Language%20interest%20is:%20" 
+                   class="btn btn-free">
+                   ✉️ Email to Register for Free Demo
+                </a>
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLScPBW5G7W2XMbhC7fb_SrB3eSSGUrnJEsqUxddFKZnpUGAg2w/viewform?usp=publish-editor" 
+                   class="btn btn-success" target="_blank">
+                   📝 Fill Google Registration Form
+                </a>
+            </div>
+        </div>
+
+        <!-- ==================== SCHOOL & PUC SECTION ==================== -->
+        <h2 id="school-puc" class="section-title">🏫 School & PUC Science Tuitions</h2>
+
+        <div class="card school-card">
+            <span class="tag school">CLASSES 8TH TO 12TH</span>
+            <h2>Tuitions for Class 8th to 12th / PUC (Science)</h2>
+            <p>Comprehensive live interactive classes & academic support for <strong>Class 8, 9, 10 (SSLC/CBSE)</strong> and <strong>1st & 2nd PUC / 11th & 12th Science</strong>.</p>
+            
+            <ul class="info-list">
+                <li>📌 <strong>Subjects:</strong> Mathematics, Physics, & Computer Science</li>
+                <li>📌 <strong>Features:</strong> Chapter-wise tests, Board exam prep, Doubt clearing & Small batches</li>
+                <li>📌 <strong>Special Offer:</strong> 1st Class is 100% FREE Demo!</li>
+            </ul>
+
+            <div class="btn-group">
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLScPBW5G7W2XMbhC7fb_SrB3eSSGUrnJEsqUxddFKZnpUGAg2w/viewform?usp=publish-editor" 
+                   class="btn btn-free" target="_blank">
+                   🎓 Register for Free School/PUC Demo Class
+                </a>
+            </div>
+        </div>
+
+        <!-- ==================== SEMESTER 1 SECTION ==================== -->
+        <h2 id="sem1" class="section-title">📚 BCA Semester 1</h2>
+
+        <div class="card free-card">
+            <span class="tag free">FREE STUDY MATERIAL</span>
+            <h2>Sem 1: C Programming & Problem Solving Notes</h2>
+            <p>Free sample notes covering basic syntax, control structures, loops, functions, and exam programs.</p>
+            <div class="btn-group">
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLScPBW5G7W2XMbhC7fb_SrB3eSSGUrnJEsqUxddFKZnpUGAg2w/viewform?usp=publish-editor" class="btn btn-sample" target="_blank">📄 Request Free Sem 1 Sample Notes</a>
+            </div>
+        </div>
+
+        <div class="card paid-card">
+            <span class="tag paid">PAID TUITION & NOTES</span>
+            <h2>Sem 1: Complete Subject Notes & Live Tuitions</h2>
+            <p>Full syllabus coverage for C Programming, Digital Electronics, and Mathematics I with solved question papers.</p>
+            <div class="btn-group">
+                <a href="mailto:francinafranklin0@gmail.com?subject=Buy%20BCA%20Sem%201%20Notes/Tuition&body=Hi,%20I%20am%20interested%20in%20BCA%20Sem%201%20Notes/Tuitions." class="btn btn-email">✉️ Buy Sem 1 Notes / Join Tuition (₹99)</a>
+            </div>
+        </div>
+
+        <!-- ==================== SEMESTER 2 SECTION ==================== -->
+        <h2 id="sem2" class="section-title">📚 BCA Semester 2</h2>
+
+        <div class="card free-card">
+            <span class="tag free">FREE STUDY MATERIAL</span>
+            <h2>Sem 2: Data Structures using C / C++ Notes</h2>
+            <p>Free sample notes covering Arrays, Stacks, Queues, Linked Lists, and basic sorting algorithms.</p>
+            <div class="btn-group">
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLScPBW5G7W2XMbhC7fb_SrB3eSSGUrnJEsqUxddFKZnpUGAg2w/viewform?usp=publish-editor" class="btn btn-sample" target="_blank">📄 Request Free Sem 2 Sample Notes</a>
+            </div>
+        </div>
+
+        <div class="card paid-card">
+            <span class="tag paid">PAID TUITION & NOTES</span>
+            <h2>Sem 2: Complete Subject Notes & Live Tuitions</h2>
+            <p>In-depth live sessions and notes for Data Structures, OOPs concepts, and Discrete Mathematics.</p>
+            <div class="btn-group">
+                <a href="mailto:francinafranklin0@gmail.com?subject=Buy%20BCA%20Sem%202%20Notes/Tuition&body=Hi,%20I%20am%20interested%20in%20BCA%20Sem%202%20Notes/Tuitions." class="btn btn-email">✉️ Buy Sem 2 Notes / Join Tuition (₹99)</a>
+            </div>
+        </div>
+
+        <!-- ==================== SEMESTER 3 SECTION ==================== -->
+        <h2 id="sem3" class="section-title">📚 BCA Semester 3</h2>
+
+        <div class="card free-card">
+            <span class="tag free">FREE STUDY MATERIAL</span>
+            <h2>Sem 3: Object Oriented Programming (Java / C++) Notes</h2>
+            <p>Free sample notes on Classes, Objects, Inheritance, Polymorphism, and Exception Handling.</p>
+            <div class="btn-group">
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLScPBW5G7W2XMbhC7fb_SrB3eSSGUrnJEsqUxddFKZnpUGAg2w/viewform?usp=publish-editor" class="btn btn-sample" target="_blank">📄 Request Free Sem 3 Sample Notes</a>
+            </div>
+        </div>
+
+        <div class="card paid-card">
+            <span class="tag paid">PAID TUITION & NOTES</span>
+            <h2>Sem 3: Complete Subject Notes & Live Tuitions</h2>
+            <p>Complete notes and live guidance for Java Programming, Operating Systems, and DBMS.</p>
+            <div class="btn-group">
+                <a href="mailto:francinafranklin0@gmail.com?subject=Buy%20BCA%20Sem%203%20Notes/Tuition&body=Hi,%20I%20am%20interested%20in%20BCA%20Sem%203%20Notes/Tuitions." class="btn btn-email">✉️ Buy Sem 3 Notes / Join Tuition (₹99)</a>
+            </div>
+        </div>
+
+        <!-- ==================== SEMESTER 4 SECTION ==================== -->
+        <h2 id="sem4" class="section-title">📚 BCA Semester 4</h2>
+
+        <div class="card free-card">
+            <span class="tag free">FREE STUDY MATERIAL</span>
+            <h2>Sem 4: Python Programming & Database Systems Notes</h2>
+            <p>Free sample notes covering Python fundamentals, SQL queries, normalization, and relational algebra.</p>
+            <div class="btn-group">
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLScPBW5G7W2XMbhC7fb_SrB3eSSGUrnJEsqUxddFKZnpUGAg2w/viewform?usp=publish-editor" class="btn btn-sample" target="_blank">📄 Request Free Sem 4 Sample Notes</a>
+            </div>
+        </div>
+
+        <div class="card paid-card">
+            <span class="tag paid">PAID TUITION & NOTES</span>
+            <h2>Sem 4: Complete Subject Notes & Live Tuitions</h2>
+            <p>Full module notes and live coaching for Python, Computer Networks, and Software Engineering.</p>
+            <div class="btn-group">
+                <a href="mailto:francinafranklin0@gmail.com?subject=Buy%20BCA%20Sem%204%20Notes/Tuition&body=Hi,%20I%20am%20interested%20in%20BCA%20Sem%204%20Notes/Tuitions." class="btn btn-email">✉️ Buy Sem 4 Notes / Join Tuition (₹99)</a>
+            </div>
+        </div>
+
+        <!-- ==================== SEMESTER 5 SECTION ==================== -->
+        <h2 id="sem5" class="section-title">📚 BCA Semester 5</h2>
+
+        <!-- FREE AI NOTES -->
+        <div class="card free-card">
+            <span class="tag free">FREE SAMPLE AVAILABLE</span>
+            <h2>Semester 5: Artificial Intelligence Notes</h2>
+            <p>Module 1–5 complete notes, search algorithms, logic & solved exam papers.</p>
+            <div class="btn-group">
+                <a href="https://drive.google.com/file/d/1zsnRcS4XBI6bYhEUJFYFZJI2iWhtYc-r/view?usp=drive_link" class="btn btn-sample" target="_blank">📄 Download Free AI Sample PDF</a>
+            </div>
+        </div>
+
+        <!-- FREE ADA NOTES -->
+        <div class="card free-card">
+            <span class="tag free">FREE SAMPLE AVAILABLE</span>
+            <h2>Semester 5: Analysis & Design of Algorithms (ADA) Notes</h2>
+            <p>Complete module notes covering Asymptotic Notations, Divide & Conquer, Dynamic Programming, Greedy Method, and solved exam problems.</p>
+            <div class="btn-group">
+                <a href="https://drive.google.com/file/d/1Bp580j1ZKtgLqB7cml1CRsyRLlLt2sbp/view?usp=drive_link" class="btn btn-sample" target="_blank">📄 Download Free ADA Sample PDF</a>
+            </div>
+        </div>
+
+        <!-- PAID SEM 5 BUNDLE -->
+        <div class="card paid-card">
+            <span class="tag paid">FULL NOTES BUNDLES & TUITION</span>
+            <h2>Semester 5: Full Subject Bundles & Live Batch</h2>
+            <p>Get full access to complete handwritten notes for AI, ADA, Web Development, and Cloud Computing + 1-on-1 exam doubt sessions.</p>
+            <div class="btn-group">
+                <a href="mailto:francinafranklin0@gmail.com?subject=Buy%20BCA%20Sem%205%20AI%20Notes&body=Hi,%20I%20want%20to%20buy%20the%20BCA%20Sem%205%20AI%20Notes.%20Please%20send%20payment%20details." 
+                   class="btn btn-email">
+                   ✉️ Buy Full AI Notes Bundle (₹99)
+                </a>
+                <a href="mailto:francinafranklin0@gmail.com?subject=Buy%20BCA%20Sem%205%20ADA%20Notes&body=Hi,%20I%20want%20to%20buy%20the%20BCA%20Sem%205%20ADA%20Notes.%20Please%20send%20payment%20details." 
+                   class="btn btn-email">
+                   ✉️ Buy Full ADA Notes Bundle (₹99)
+                </a>
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLScPBW5G7W2XMbhC7fb_SrB3eSSGUrnJEsqUxddFKZnpUGAg2w/viewform?usp=publish-editor" class="btn btn-free" target="_blank">
+                   📝 Register for Sem 5 Live Tuitions
+                </a>
+            </div>
+        </div>
+
+        <!-- ==================== SEMESTER 6 SECTION ==================== -->
+        <h2 id="sem6" class="section-title">📚 BCA Semester 6</h2>
+
+        <div class="card free-card">
+            <span class="tag free">FREE STUDY MATERIAL</span>
+            <h2>Sem 6: Web Technology & Machine Learning Preview</h2>
+            <p>Free sample notes covering HTML/CSS/JS basics, PHP/Node.js intro, and Machine Learning algorithms.</p>
+            <div class="btn-group">
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLScPBW5G7W2XMbhC7fb_SrB3eSSGUrnJEsqUxddFKZnpUGAg2w/viewform?usp=publish-editor" class="btn btn-sample" target="_blank">📄 Request Free Sem 6 Sample Notes</a>
+            </div>
+        </div>
+
+        <div class="card paid-card">
+            <span class="tag paid">PAID TUITION & NOTES</span>
+            <h2>Sem 6: Complete Subject Notes & Live Tuitions</h2>
+            <p>Comprehensive preparation for final semester theory exams, practical lab exams, and Machine Learning concepts.</p>
+            <div class="btn-group">
+                <a href="mailto:francinafranklin0@gmail.com?subject=Buy%20BCA%20Sem%206%20Notes/Tuition&body=Hi,%20I%20am%20interested%20in%20BCA%20Sem%206%20Notes/Tuitions." class="btn btn-email">✉️ Buy Sem 6 Notes / Join Tuition (₹99)</a>
+            </div>
+        </div>
+
+        <!-- ==================== COLLEGE PROJECTS SECTION ==================== -->
+        <h2 id="projects" class="section-title">💻 College Projects & Mentorship</h2>
+
+        <div class="card project-card">
+            <span class="tag">PROJECT HELP</span>
+            <h2>BCA Final Year & Semester Project Mentorship</h2>
+            <p>Stuck with your college mini/major project? Get complete source code explanation, project setup on your system, report documentation, and Viva prep guidance!</p>
+            
+            <div class="btn-group">
+                <a href="mailto:francinafranklin0@gmail.com?subject=College%20Project%20Assistance&body=Hi,%20I%20need%20help%20with%20my%20BCA%20college%20project.%20My%20project%20topic/tech%20stack%20is:%20" 
+                   class="btn btn-email">
+                   ✉️ Get Project Mentorship Details
+                </a>
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLScPBW5G7W2XMbhC7fb_SrB3eSSGUrnJEsqUxddFKZnpUGAg2w/viewform?usp=publish-editor" class="btn btn-free" target="_blank">
+                   📝 Request Project Guidance via Form
+                </a>
+            </div>
+        </div>
+
     </div>
 
-    <!-- SECTION 2: LIVE TUITION & CODING -->
-    <div class="card">
-        <span class="tag">LIVE CLASSES</span>
-        <h2>Live Programming & Subject Tuitions</h2>
-        <p>Learn C, C++, Java, Data Structures ,python ,ai,ml, or Web Dev from scratch on Google Meet. Small batches with 1-on-1 doubt clearing.</p>
-        <p><strong>🔥 Special Offer: First Live Session is 100% FREE!</strong></p>
-        
-        <a href="mailto:francinafranklin0@gmail.com?subject=Register%20for%20FREE%20Demo%20Class&body=Hi,%20I%20want%20to%20attend%20the%20FREE%20First%20Session%20for%20Live%20Tuitions.%20My%20Subject/Language%20interest%20is:%20" 
-           class="btn btn-free">
-           🎓 Register for Free First Session
-        </a>
-    </div>
-    <!-- SECTION: ADA NOTES -->
-    <div class="card">
-    <span class="tag">STUDY MATERIAL</span>
-    <h2>Semester 5: Analysis & Design of Algorithms (ADA) Notes</h2>
-    <p>Complete module notes covering Asymptotic Notations, Divide & Conquer, Dynamic Programming, Greedy Method, and solved exam problems.</p>
-    
-    <!-- FREE SAMPLE LINK -->
-    <a href="https://drive.google.com/file/d/1Bp580j1ZKtgLqB7cml1CRsyRLlLt2sbp/view?usp=drive_link" class="btn btn-sample" target="_blank">📄 Download Free ADA Sample PDF</a>
-    
-    <!-- BUY FULL NOTES LINK -->
-    <a href="mailto:francinafranklin0@gmail.com?subject=Buy%20BCA%20Sem%205%20ADA%20Notes&body=Hi,%20I%20want%20to%20buy%20the%20BCA%20Sem%205%20ADA%20Notes.%20Please%20send%20payment%20details." 
-       class="btn btn-email">
-       ✉️ Buy Full ADA Notes Bundle (₹99)
-    </a>
-
-    <!-- GOOGLE FORM LINK -->
-    <a href="https://docs.google.com/forms/d/e/1FAIpQLScPBW5G7W2XMbhC7fb_SrB3eSSGUrnJEsqUxddFKZnpUGAg2w/viewform?usp=publish-editor" class="btn btn-free" target="_blank">
-       📝 Register / Request Material
-    </a>
-</div>
-
-    <!-- SECTION 3: COLLEGE PROJECTS -->
-    <div class="card">
-        <span class="tag">PROJECT HELP</span>
-        <h2>BCA Final Year & Semester Project Mentorship</h2>
-        <p>Stuck with your college mini/major project? Get complete source code explanation, project setup on your system, report documentation, and Viva prep guidance!</p>
-        
-        <a href="mailto:francinafranklin0@gmail.com?subject=College%20Project%20Assistance&body=Hi,%20I%20need%20help%20with%20my%20BCA%20college%20project.%20My%20project%20topic/tech%20stack%20is:%20" 
-           class="btn btn-email">
-           ✉️ Get Project Mentorship Details
-        </a>
-    </div>
-    <!-- SECTION: SCHOOL & PUC SCIENCE TUITIONS -->
-    <div class="card">
-    <span class="tag">SCHOOL & PUC CLASSES</span>
-    <h2>Tuitions for Class 8th to 12th / PUC (Science)</h2>
-    <p>Comprehensive live interactive classes & academic support for <strong>Class 8, 9, 10 (SSLC/CBSE)</strong> and <strong>1st & 2nd PUC / 11th & 12th Science</strong>.</p>
-    
-    <ul class="cert-list">
-        <li>📌 <strong>Subjects:</strong> Mathematics, Physics, & Computer Science</li>
-        <li>📌 <strong>Features:</strong> Chapter-wise tests, Board exam prep, Doubt clearing & Small batches</li>
-        <li>📌 <strong>Special Offer:</strong> 1st Class is 100% FREE Demo!</li>
-    </ul>
-
-    <a href="https://docs.google.com/forms/d/e/1FAIpQLScPBW5G7W2XMbhC7fb_SrB3eSSGUrnJEsqUxddFKZnpUGAg2w/viewform?usp=publish-editor" 
-       class="btn btn-free" target="_blank">
-       🎓 Register for Free School/PUC Demo Class
-    </a>
-   </div>
+    <!-- FOOTER -->
+    <footer>
+        <p>&copy; 2026 BrightMind Academy. All rights reserved.</p>
+    </footer>
 
 </body>
 </html>
