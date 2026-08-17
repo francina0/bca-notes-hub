@@ -200,6 +200,162 @@
         .btn-email { background-color: var(--danger); }
         .btn-success { background-color: var(--success); }
 
+
+        /* ==================== STUDENT STARTER KIT ==================== */
+        .starter-kit-card {
+            position: relative;
+            overflow: hidden;
+            background:
+                radial-gradient(circle at 100% 0%, rgba(37,99,235,0.16), transparent 32%),
+                linear-gradient(135deg, #ffffff 0%, #f7fbff 100%);
+            padding: 34px 28px;
+            margin-bottom: 30px;
+            border-radius: 18px;
+            border: 1px solid #dbeafe;
+            border-top: 5px solid var(--primary);
+            box-shadow: 0 10px 30px rgba(26,115,232,0.12);
+        }
+
+        .starter-kit-card::before {
+            content: "VECTOR MIND ACADEMY";
+            position: absolute;
+            top: 18px;
+            right: 22px;
+            font-size: 0.65rem;
+            font-weight: 800;
+            letter-spacing: 1.5px;
+            color: #93c5fd;
+        }
+
+        .starter-kit-content h2 {
+            color: #0b1f3a;
+            font-size: 1.7rem;
+            margin: 10px 0 10px;
+            line-height: 1.25;
+        }
+
+        .starter-lead {
+            max-width: 760px;
+            color: #475569 !important;
+            font-size: 1rem !important;
+            line-height: 1.7;
+            margin-bottom: 22px !important;
+        }
+
+        .starter-features {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 12px;
+            margin: 20px 0;
+        }
+
+        .starter-feature {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            padding: 14px;
+            background: rgba(255,255,255,0.9);
+            border: 1px solid #e2e8f0;
+            border-radius: 12px;
+            min-height: 78px;
+        }
+
+        .starter-feature > span {
+            font-size: 1.35rem;
+            line-height: 1;
+        }
+
+        .starter-feature strong {
+            display: block;
+            color: #0f172a;
+            font-size: 0.9rem;
+            margin-bottom: 3px;
+        }
+
+        .starter-feature small {
+            display: block;
+            color: #64748b;
+            font-size: 0.78rem;
+            line-height: 1.35;
+        }
+
+        .starter-highlight {
+            display: flex;
+            gap: 10px;
+            align-items: flex-start;
+            background: #eff6ff;
+            border-left: 4px solid #2563eb;
+            padding: 14px 16px;
+            border-radius: 8px;
+            color: #334155;
+            font-size: 0.9rem;
+            line-height: 1.55;
+            margin: 20px 0;
+        }
+
+        .starter-highlight strong {
+            color: #1d4ed8;
+            white-space: nowrap;
+        }
+
+        .starter-buttons {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+            flex-direction: row;
+        }
+
+        .starter-buttons .btn {
+            margin: 0;
+        }
+
+        .btn-starter {
+            background: linear-gradient(135deg, #2563eb, #0d47a1);
+            box-shadow: 0 5px 14px rgba(37,99,235,0.22);
+        }
+
+        .btn-download {
+            background: #0f766e;
+            box-shadow: 0 5px 14px rgba(15,118,110,0.18);
+        }
+
+        .starter-note {
+            text-align: center;
+            color: #64748b !important;
+            font-size: 0.82rem !important;
+            margin: 15px 0 0 !important;
+        }
+
+        @media (max-width: 700px) {
+            .starter-kit-card {
+                padding: 26px 18px;
+            }
+
+            .starter-kit-card::before {
+                display: none;
+            }
+
+            .starter-kit-content h2 {
+                font-size: 1.35rem;
+            }
+
+            .starter-features {
+                grid-template-columns: 1fr;
+            }
+
+            .starter-buttons {
+                grid-template-columns: 1fr;
+            }
+
+            .starter-highlight {
+                flex-direction: column;
+            }
+
+            .starter-highlight strong {
+                white-space: normal;
+            }
+        }
+
         /* FOOTER */
         footer {
             text-align: center;
@@ -229,6 +385,7 @@
         <a href="#sem5">Sem 5</a>
         <a href="#sem6">Sem 6</a>
         <a href="#projects">Projects</a>
+        <a href="#starter-kit">🎁 Student Starter Kit</a>
     </nav>
 
     <div class="container">
@@ -497,6 +654,66 @@
             <p>Comprehensive preparation for final semester theory exams, practical lab exams, and Machine Learning concepts.</p>
             <div class="btn-group">
                 <a href="mailto:francinafranklin0@gmail.com?subject=Buy%20BCA%20Sem%206%20Notes/Tuition&body=Hi,%20I%20am%20interested%20in%20BCA%20Sem%206%20Notes/Tuitions." class="btn btn-email">✉️ Buy Sem 6 Notes / Join Tuition (₹99)</a>
+            </div>
+        </div>
+
+
+        <!-- ==================== VECTOR MIND ACADEMY STUDENT STARTER KIT ==================== -->
+        <h2 id="starter-kit" class="section-title">🎁 Vector Student Starter Kit</h2>
+
+        <div class="starter-kit-card">
+            <div class="starter-kit-content">
+                <span class="tag free">FREE STUDENT RESOURCE</span>
+                <h2>🚀 VECTOR MIND ACADEMY — STUDENT STARTER KIT</h2>
+                <p class="starter-lead">
+                    Your practical first step toward becoming a <strong>career-ready student</strong>.
+                    Build direction, skills, projects, a portfolio and confidence—one step at a time.
+                </p>
+
+                <div class="starter-features">
+                    <div class="starter-feature">
+                        <span>🧭</span>
+                        <div><strong>Career Direction</strong><small>Choose a practical starting path</small></div>
+                    </div>
+                    <div class="starter-feature">
+                        <span>💻</span>
+                        <div><strong>Skill Roadmaps</strong><small>Developer, AI/Data & Cybersecurity</small></div>
+                    </div>
+                    <div class="starter-feature">
+                        <span>🛠️</span>
+                        <div><strong>Project Ideas</strong><small>Build proof of what you can do</small></div>
+                    </div>
+                    <div class="starter-feature">
+                        <span>📄</span>
+                        <div><strong>Resume + GitHub</strong><small>Start building your professional profile</small></div>
+                    </div>
+                    <div class="starter-feature">
+                        <span>🤖</span>
+                        <div><strong>AI Toolkit</strong><small>5 practical prompts for students</small></div>
+                    </div>
+                    <div class="starter-feature">
+                        <span>🎯</span>
+                        <div><strong>30-Day Challenge</strong><small>Learn → Build → Share → Improve</small></div>
+                    </div>
+                </div>
+
+                <div class="starter-highlight">
+                    <strong>What's inside?</strong>
+                    <span>10 professional pages • Career roadmap • 3 project ideas • GitHub checklist • Resume checklist • AI prompts • 30-day challenge • Weekly planner</span>
+                </div>
+
+                <div class="btn-group starter-buttons">
+                    <a href="student-starter-kit.pdf" class="btn btn-starter" target="_blank" rel="noopener">
+                        📘 Open Student Starter Kit
+                    </a>
+                    <a href="student-starter-kit.pdf" class="btn btn-download" download>
+                        ⬇️ Download Free PDF
+                    </a>
+                </div>
+
+                <p class="starter-note">
+                    <strong>FREE.</strong> No complicated course. Just a practical resource to help you take your next step.
+                </p>
             </div>
         </div>
 
